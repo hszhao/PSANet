@@ -1,0 +1,19 @@
+message LayerParameter {
+  optional PointwiseSpatialAttentionParameter pointwise_spatial_attention_param = 1001;
+}
+
+message V1LayerParameter {
+  optional PointwiseSpatialAttentionParameter pointwise_spatial_attention_param = 1001;
+}
+
+message PointwiseSpatialAttentionParameter {
+  optional uint32 attention_mask_height = 1;
+  optional uint32 attention_mask_width = 2;
+  optional float normalization_factor = 3;
+  optional bool is_softmax = 4 [default = false];
+  enum PSAType {
+    COLLECT = 0;
+    DISTRIBUTE = 1;
+  }
+  optional PSAType psa_type = 5 [default = COLLECT];
+}
