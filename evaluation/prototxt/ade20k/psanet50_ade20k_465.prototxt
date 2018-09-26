@@ -1698,7 +1698,7 @@ layer {
 }
 layer {
   name: "conv4_1_3x3"
-  type: "HoleConvolution"
+  type: "Convolution"
   bottom: "conv4_1_1x1_reduce"
   top: "conv4_1_3x3"
   param {
@@ -1708,7 +1708,7 @@ layer {
   convolution_param {
     num_output: 256
     pad: 2
-    hole: 2
+    dilation: 2
     kernel_size: 3
     stride: 1
     weight_filler {
@@ -1943,7 +1943,7 @@ layer {
 }
 layer {
   name: "conv4_2_3x3"
-  type: "HoleConvolution"
+  type: "Convolution"
   bottom: "conv4_2_1x1_reduce"
   top: "conv4_2_3x3"
   param {
@@ -1953,7 +1953,7 @@ layer {
   convolution_param {
     num_output: 256
     pad: 2
-    hole: 2
+    dilation: 2
     kernel_size: 3
     stride: 1
     weight_filler {
@@ -2134,7 +2134,7 @@ layer {
 }
 layer {
   name: "conv4_3_3x3"
-  type: "HoleConvolution"
+  type: "Convolution"
   bottom: "conv4_3_1x1_reduce"
   top: "conv4_3_3x3"
   param {
@@ -2144,7 +2144,7 @@ layer {
   convolution_param {
     num_output: 256
     pad: 2
-    hole: 2
+    dilation: 2
     kernel_size: 3
     stride: 1
     weight_filler {
@@ -2325,7 +2325,7 @@ layer {
 }
 layer {
   name: "conv4_4_3x3"
-  type: "HoleConvolution"
+  type: "Convolution"
   bottom: "conv4_4_1x1_reduce"
   top: "conv4_4_3x3"
   param {
@@ -2335,7 +2335,7 @@ layer {
   convolution_param {
     num_output: 256
     pad: 2
-    hole: 2
+    dilation: 2
     kernel_size: 3
     stride: 1
     weight_filler {
@@ -2516,7 +2516,7 @@ layer {
 }
 layer {
   name: "conv4_5_3x3"
-  type: "HoleConvolution"
+  type: "Convolution"
   bottom: "conv4_5_1x1_reduce"
   top: "conv4_5_3x3"
   param {
@@ -2526,7 +2526,7 @@ layer {
   convolution_param {
     num_output: 256
     pad: 2
-    hole: 2
+    dilation: 2
     kernel_size: 3
     stride: 1
     weight_filler {
@@ -2707,7 +2707,7 @@ layer {
 }
 layer {
   name: "conv4_6_3x3"
-  type: "HoleConvolution"
+  type: "Convolution"
   bottom: "conv4_6_1x1_reduce"
   top: "conv4_6_3x3"
   param {
@@ -2717,7 +2717,7 @@ layer {
   convolution_param {
     num_output: 256
     pad: 2
-    hole: 2
+    dilation: 2
     kernel_size: 3
     stride: 1
     weight_filler {
@@ -2898,7 +2898,7 @@ layer {
 }
 layer {
   name: "conv5_1_3x3"
-  type: "HoleConvolution"
+  type: "Convolution"
   bottom: "conv5_1_1x1_reduce"
   top: "conv5_1_3x3"
   param {
@@ -2908,7 +2908,7 @@ layer {
   convolution_param {
     num_output: 512
     pad: 4
-    hole: 4
+    dilation: 4
     kernel_size: 3
     stride: 1
     weight_filler {
@@ -3143,7 +3143,7 @@ layer {
 }
 layer {
   name: "conv5_2_3x3"
-  type: "HoleConvolution"
+  type: "Convolution"
   bottom: "conv5_2_1x1_reduce"
   top: "conv5_2_3x3"
   param {
@@ -3153,7 +3153,7 @@ layer {
   convolution_param {
     num_output: 512
     pad: 4
-    hole: 4
+    dilation: 4
     kernel_size: 3
     stride: 1
     weight_filler {
@@ -3334,7 +3334,7 @@ layer {
 }
 layer {
   name: "conv5_3_3x3"
-  type: "HoleConvolution"
+  type: "Convolution"
   bottom: "conv5_3_1x1_reduce"
   top: "conv5_3_3x3"
   param {
@@ -3344,7 +3344,7 @@ layer {
   convolution_param {
     num_output: 512
     pad: 4
-    hole: 4
+    dilation: 4
     kernel_size: 3
     stride: 1
     weight_filler {
