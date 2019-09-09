@@ -6773,26 +6773,12 @@ layer {
   top: "conv5_3_reduce_before_PSA_COLLECT"
 }
 
-# shrink from 89 * 89 to 23 * 23
-
-layer {
-  name: "conv5_3_reduce_before_PSA_COLLECT_shrink"
-  type: "Interp"
-  bottom: "conv5_3_reduce_before_PSA_COLLECT"
-  top: "conv5_3_reduce_before_PSA_COLLECT_shrink"
-  interp_param {
-    shrink_factor: 2
-    pad_beg: 0
-    pad_end: 0
-  }
-}
-
 # gen attention
 
 layer {
   name: "PSA_COLLECT_fc1"
   type: "Convolution"
-  bottom: "conv5_3_reduce_before_PSA_COLLECT_shrink"
+  bottom: "conv5_3_reduce_before_PSA_COLLECT"
   top: "PSA_COLLECT_fc1"
   param {
     lr_mult: 10
@@ -6873,7 +6859,7 @@ layer {
 layer {
   name: "global_feature_COLLECT"
   type: "PointwiseSpatialAttention"
-  bottom: "conv5_3_reduce_before_PSA_COLLECT_shrink"
+  bottom: "conv5_3_reduce_before_PSA_COLLECT"
   bottom: "PSA_COLLECT_fc2"
   top: "global_feature_COLLECT"
   pointwise_spatial_attention_param {
@@ -6945,26 +6931,12 @@ layer {
   top: "conv5_3_reduce_before_PSA_DISTRIBUTE"
 }
 
-# shrink from 89 * 89 to 23 * 23
-
-layer {
-  name: "conv5_3_reduce_before_PSA_DISTRIBUTE_shrink"
-  type: "Interp"
-  bottom: "conv5_3_reduce_before_PSA_DISTRIBUTE"
-  top: "conv5_3_reduce_before_PSA_DISTRIBUTE_shrink"
-  interp_param {
-    shrink_factor: 2
-    pad_beg: 0
-    pad_end: 0
-  }
-}
-
 # gen attention
 
 layer {
   name: "PSA_DISTRIBUTE_fc1"
   type: "Convolution"
-  bottom: "conv5_3_reduce_before_PSA_DISTRIBUTE_shrink"
+  bottom: "conv5_3_reduce_before_PSA_DISTRIBUTE"
   top: "PSA_DISTRIBUTE_fc1"
   param {
     lr_mult: 10
@@ -7045,7 +7017,7 @@ layer {
 layer {
   name: "global_feature_DISTRIBUTE"
   type: "PointwiseSpatialAttention"
-  bottom: "conv5_3_reduce_before_PSA_DISTRIBUTE_shrink"
+  bottom: "conv5_3_reduce_before_PSA_DISTRIBUTE"
   bottom: "PSA_DISTRIBUTE_fc2"
   top: "global_feature_DISTRIBUTE"
   pointwise_spatial_attention_param {
@@ -7126,22 +7098,10 @@ layer {
 }
 
 layer {
-  name: "conv_post_PSA_zoom"
-  type: "Interp"
-  bottom: "conv_post_PSA"
-  top: "conv_post_PSA_zoom"
-  interp_param {
-    zoom_factor: 2
-    pad_beg: 0
-    pad_end: 0
-  }
-}
-
-layer {
   name: "conv5_3_concat"
   type: "Concat"
   bottom: "conv5_3"
-  bottom: "conv_post_PSA_zoom"
+  bottom: "conv_post_PSA"
   top: "conv5_3_concat"
 }
 

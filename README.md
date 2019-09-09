@@ -6,7 +6,9 @@ by Hengshuang Zhao\*, Yi Zhang\*, Shu Liu, Jianping Shi, Chen Change Loy, Dahua 
 
 This repository is build for PSANet, which contains source code for PSA module and related evaluation code. For installation, please merge the related layers and follow the description in [PSPNet](https://github.com/hszhao/PSPNet) repository (test with CUDA 7.0/7.5 + cuDNN v4).
 
-**Note**: There are some small structure changes of the evaluation code compared to PSPNet, and has not been fully tested yet for limited time, and PSPNet evaluation should work well if you prefer . After the coming ECCV2018, both PSPNet and PSANet will be updated to CUDA 8.0 + cuDNN v5, both docker file and python interface scripts will be provided, and pytorch implementation will be available in repo [semseg](https://github.com/hszhao/semseg) later.
+### PyTorch Version
+
+Highly optimized PyTorch codebases available for semantic segmentation in repo: [semseg](https://github.com/hszhao/semseg), including full training and testing codes for [PSPNet](https://hszhao.github.io/projects/pspnet) and [PSANet](https://hszhao.github.io/projects/psanet).
 
 ### Usage
 
